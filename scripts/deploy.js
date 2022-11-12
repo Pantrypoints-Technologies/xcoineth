@@ -19,11 +19,11 @@ async function main() {
   const realEstate = await RealEstate.deploy()
   await realEstate.deployed()
 
-  console.log(`Deployed Real Estate Contract at: ${realEstate.address}`)
-  console.log(`Minting 3 properties...\n`)
+  console.log(`Deployed Fund Contracts at: ${realEstate.address}`)
+  console.log(`Minting 3 funds...\n`)
 
   for (let i = 0; i < 3; i++) {
-    const transaction = await realEstate.connect(seller).mint(`https://ipfs.io/ipfs/QmQVcpsjrA6cr1iJjZAodYwmPekYgbnXGo4DFubJiLc2EB/${i + 1}.json`)
+    const transaction = await realEstate.connect(seller).mint(`https://sorasystem.sirv.com/${i + 1}.json`)
     await transaction.wait()
   }
 
@@ -38,7 +38,7 @@ async function main() {
   await escrow.deployed()
 
   console.log(`Deployed Escrow Contract at: ${escrow.address}`)
-  console.log(`Listing 3 properties...\n`)
+  console.log(`Listing 3 funds...\n`)
 
   for (let i = 0; i < 3; i++) {
     // Approve properties...
