@@ -1,12 +1,11 @@
-# XCoins Local (Ethereum)
+# XCoins Local (Ethereum) by Team Pantrypoints.com
 
+![Crossborder](/crossborder.png)
+ - Juan Dalisay Jr
+ - Adrian Evangelista
+ - Michael Briones Lituanias
 
-
-
-
-
-
-
+This repo is forked from https://github.com/dappuniversity/millow
 
 
 ## Technology Stack & Tools
@@ -17,24 +16,23 @@
 - [Ethers.js](https://docs.ethers.io/v5/) (Blockchain Interaction)
 - [React.js](https://reactjs.org/) (Frontend Framework)
 
-## Requirements For Initial Setup
-- Install [NodeJS](https://nodejs.org/en/)
 
-## Setting Up
-### 1. Clone/Download the Repository
-
-### 2. Install Dependencies:
+### 1. Install Dependencies:
 `$ npm install`
 
-### 3. Run tests
-`$ npx hardhat test`
-
-### 4. Start Hardhat node
+### 2. Start Hardhat node
 `$ npx hardhat node`
 
-### 5. Run deployment script
+### 3. Mint 3 NFTs
 In a separate terminal execute:
 `$ npx hardhat run ./scripts/deploy.js --network localhost`
 
-### 7. Start frontend
+### 4. Add Metamask to Firefox or Chrome
+
+### 5. Add the local hardhad note created in step 2, as a New Network
+
+![Crossborder](/newnet.jpg)
+
+### 6. Start frontend
 `$ npm run start`
+

@@ -124,9 +124,9 @@ const Home = ({ home, provider, account, escrow, togglePop }) => {
                 <div className="home__overview">
                     <h1>{home.name}</h1>
                     <p>
-                        <strong>{home.attributes[2].value}</strong> bds |
-                        <strong>{home.attributes[3].value}</strong> ba |
-                        <strong>{home.attributes[4].value}</strong> sqft
+                        <strong>{home.attributes[2].value}</strong> investment period |
+                        <strong>{home.attributes[3].value}</strong> partner |
+                        <strong>{home.attributes[4].value}</strong> crop
                     </p>
                     <p>{home.address}</p>
 
@@ -140,15 +140,15 @@ const Home = ({ home, provider, account, escrow, togglePop }) => {
                         <div>
                             {(account === inspector) ? (
                                 <button className='home__buy' onClick={inspectHandler} disabled={hasInspected}>
-                                    Approve Inspection
+                                    Buy
                                 </button>
                             ) : (account === lender) ? (
                                 <button className='home__buy' onClick={lendHandler} disabled={hasLended}>
-                                    Approve & Lend
+                                    Buy
                                 </button>
                             ) : (account === seller) ? (
                                 <button className='home__buy' onClick={sellHandler} disabled={hasSold}>
-                                    Approve & Sell
+                                    Buy
                                 </button>
                             ) : (
                                 <button className='home__buy' onClick={buyHandler} disabled={hasBought}>
@@ -172,7 +172,7 @@ const Home = ({ home, provider, account, escrow, togglePop }) => {
 
                     <hr />
 
-                    <h2>Facts and features</h2>
+                    <h2>Features</h2>
 
                     <ul>
                         {home.attributes.map((attribute, index) => (

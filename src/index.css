@@ -10,7 +10,7 @@
   --clr-white: #FFFFFF;
   --clr-black: #202020;
   --clr-grey: #707070;
-  --clr-blue: #6C63FF;
+  --clr-blue: #35baf6;
   --clr-blue-2: #4c46b6;
   --clr-green: #4fb646;
 }
@@ -98,7 +98,7 @@ nav {
 /* -- HEADER -- */
 
 header {
-  background-image: url("./assets/houses.png");
+  background-image: url("../public/farm.jpg");
   background-position: center;
   background-size: cover;
   min-height: 40vh;
