@@ -1,4 +1,13 @@
-# Real Estate NFT DApp
+# XCoins Local (Ethereum)
+
+
+
+
+
+
+
+
+
 
 ## Technology Stack & Tools
 

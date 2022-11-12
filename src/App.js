@@ -23,8 +23,12 @@ function App() {
   const [home, setHome] = useState({})
   const [toggle, setToggle] = useState(false);
 
+
   const loadBlockchainData = async () => {
-    const provider = new ethers.providers.Web3Provider(window.ethereum)
+
+
+    const provider = ((window.ethereum != null) ? new ethers.providers.Web3Provider(window.ethereum) : ethers.providers.getDefaultProvider());
+    // const provider = new ethers.providers.Web3Provider(window.ethereum)
     setProvider(provider)
     const network = await provider.getNetwork()
 
@@ -32,12 +36,18 @@ function App() {
     const totalSupply = await realEstate.totalSupply()
     const homes = []
 
+    // config[network.chainId].realEstate.address
+
+    console.log(config[network.chainId].realEstate.address)
+
+
     for (var i = 1; i <= totalSupply; i++) {
       const uri = await realEstate.tokenURI(i)
       const response = await fetch(uri)
       const metadata = await response.json()
       homes.push(metadata)
     }
+
 
     setHomes(homes)
 
@@ -50,6 +60,8 @@ function App() {
       setAccount(account);
     })
   }
+
+
 
   useEffect(() => {
     loadBlockchainData()
@@ -67,7 +79,7 @@ function App() {
 
       <div className='cards__section'>
 
-        <h3>Homes For You</h3>
+        <h3>Funds Available</h3>
 
         <hr />
 
@@ -80,11 +92,13 @@ function App() {
               <div className='card__info'>
                 <h4>{home.attributes[0].value} ETH</h4>
                 <p>
-                  <strong>{home.attributes[2].value}</strong> bds |
-                  <strong>{home.attributes[3].value}</strong> ba |
-                  <strong>{home.attributes[4].value}</strong> sqft
+                  <strong>{home.attributes[2].value}</strong> period |
+                  <strong>{home.attributes[3].value}</strong> agent |
+                  <strong>{home.attributes[4].value}</strong> area
                 </p>
-                <p>{home.address}</p>
+                <p>
+                  {home.attributes[1].value} ETH After Period in Load
+                </p> 
               </div>
             </div>
           ))}
